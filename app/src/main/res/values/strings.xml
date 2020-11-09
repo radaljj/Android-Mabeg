@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Mabeg</string>
+    <string name="forma">Email forma</string>
+    <string name="copy_right" translatable="false">© Mabeg d.o.o.</string>
+    <string name="title_activity_porucivanje">Porucivanje</string>
+    <string name="article_title">Pomoc u koriscenju aplikacije</string>
+    <string name="povratak">Povratak u meni</string>
+    <string name="article_o_nama">Informacije o nama</string>
+
+    <string name="article_text">
+
+<b>Opcije u meniju:</b>
+\n\n
+ <b><i>Dugme poruci putem emaila</i></b> Klikom na ovo dugme otvorice Vam se forma putem koje mozete naruciti robu pomocu emaila.Sve sto je potrebno jeste da popunite neophodna polja(*) i odaberete nacin isporuke na koji zelite da vam roba bude isporucena.Potrebno je da pre koriscenja forme imate vas email povezan na neku od glavnih aplikacija za to(Gmail,Outlook,Blue mail...) i nakon klika na dugme <b>posalji email</b> bice Vam ponudjeno preko koje email aplikacije zelite da email bude poslat.U koliko niste ulogovani u vas email,to ce od vas biti trazeno.
+  \n\n
+<b><i>Dugme proizvodi</i></b> Klikom na ovo dugme korisniku ce biti otvorena strana sa nekim od glavnih proizvoda koje nudi nasa firma.Sve ove proizvode mozete videti na nasem websajtu.Na ovoj strani se nalazi galerija koja radi pomocu swipe-a prstom(u desno) kako bi mogli da pogledate sve proizvode dostupne u galeriji.
+\n\n
+<b><i>Dugme kako do nas</i></b> Klikom na ovo dugme otvorice Vam se Google Maps aplikacija sa nasim koordinatama.<b>Sve sto je potrebno da uradite jeste da kliknete na crveni marker koji predstavlja nasu loakciju, i u donjem desnom uglu ce Vam se pojaviti dva dugmica directions</b> koja nakon klika otvaraju Google Maps aplikaciju(morate je imati instaliranu na telefonu) koja omogucava najbrzu putanju do nas.
+\n\n
+<b><i>Dugme pozovite nas</i></b> Klikom na ovo dugme ce Vam se otvoriti nov prozor u kom mozete da nas pozovete.Sve sto treba da uradite jeste da kliknete na dugme ispod naseg broja i automatski ce vam se otvoriti Phone aplikacija vaseg telefona gde cete moci da nas pozovete.
+\n\n
+<b><i>Dugme web sajt</i></b> Klikom na ovo dugme ce Vam se jednostavno u vasem default browser-u otvoriti nas web sajt na kom imate sve potrebne informacije koje Vas zanimaju kao i nas kontakt.
+\n\n
+<b><i>Dugme o nama</i></b> Klikom na ovo dugme mozete videti kratak opis o nasoj firmi.Ovde mozete videti kada smo osnovni, nasu delatnost i cime se bavimo, kao i mogucnost kontaktiranja i pristup nasim drustvenim mrezama.
+\n\n
+</string>
+
+    <string name="o_nama">
+        <b>O nama :</b>
+        \n\n
+       Fima Mabeg sa sedištem u Beogradu, je osnovana 2006g.
+Od samog osnivanja bavimo se prodajom, obukom i instalacijom opreme namenjene izradi
+svih vrsta deklaracija za proizvode. U širokoj paleti možemo ponuditi Citizen, Datamax, Zebra, Intermec,
+Godex i druge modele štampača etiketa, kao i prateću opremu, rezervne delove, servis i potošni
+materijal. Materijali su odlilčnog kvaliteta i garantujemo odličan kvalitet otiska. Posebno izdvajamo pored
+samlepljivih etiketa raznih dimenzija i boja , paletu ušivnih traka za izradu ušivnih etiketa sa pratećim
+ribonima u više boja. Ukoliko već posedujete štampač etiketa, ili nameravate da ga nabavite , možete
+nas pozvati radi konsultacija i izbora najpovoljnijeg rešenja prema Vašim potrebama.
+Za sva dodatna pitanja nas pozovite na br. 011 3543 760 ili nas posetite na adresi Požeška 37 Beograd
+        Takodje možete poslati sva vaša pitanja na naš email putem Kontaktirajte nas opcije koja se nalazi ispod.
+    </string>
+    <string name="title_activity_maps">Map</string>
+
+</resources>
+

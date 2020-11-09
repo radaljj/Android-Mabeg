@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@drawable/pozadina"
+    android:layout_height="match_parent"
+
+    android:gravity="center_horizontal|center_vertical"
+    tools:context=".PozivAktivnost">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="95dp"
+        android:layout_gravity="center"
+        android:background="@drawable/providni_logo"
+        ></ImageView>
+
+    <EditText
+        android:id="@+id/et_phone_no"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:editable="false"
+        android:text="0113543760"
+        android:textColorHint="#ba160c" />
+
+    <Button
+        android:id="@+id/btn_dial"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/rounded_corners"
+        android:text="Pozovite nas!"
+        android:textColor="#FFF" />
+</LinearLayout>
