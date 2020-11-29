@@ -29,14 +29,16 @@
             android:orientation="vertical">
 
             <TextView
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="To:"
+                android:text="Email za slanje:"
                 android:textSize="17sp"
                 android:textColor="#000000"
                 android:textColorHint="#ba160c" />
 
             <EditText
+
                 android:id="@+id/sendTo"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
@@ -46,20 +48,21 @@
                 android:textColor="#000000"
                 android:textColorHint="#ba160c" />
 
-
-
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Tema poruke(*): "
+                android:visibility="gone"
+                android:text="Tema poruke: "
                 android:textSize="17sp"
                 android:textColor="#000000"
                 android:textColorHint="#ba160c" />
 
             <EditText
                 android:id="@+id/subjectTo"
+                android:visibility="gone"
                 android:textSize="17sp"
+                android:editable="false"
+                android:text="porudžbina putem aplikacije"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#000000"
@@ -93,6 +96,7 @@
 
             <EditText
                 android:id="@+id/adresaFirme"
+
                 android:layout_width="match_parent"
                 android:textSize="17sp"
                 android:layout_height="wrap_content"
@@ -104,7 +108,7 @@
                 android:layout_width="match_parent"
                 android:textSize="17sp"
                 android:layout_height="wrap_content"
-                android:text="Kontakt telefon(*): "
+                android:text="Kontakt/telefon(*): "
                 android:textColor="#000000"
                 android:textColorHint="#ba160c" />
 

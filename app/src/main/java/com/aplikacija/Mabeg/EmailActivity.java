@@ -12,12 +12,16 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
+
+
 public class EmailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_email);
         getSupportActionBar().hide();
+
 
 
     }
@@ -38,8 +42,7 @@ public class EmailActivity extends AppCompatActivity {
         int selectedRadioButtonID = rg.getCheckedRadioButtonId();
         if (selectedRadioButtonID == -1 ||txtSubject.getText().toString().length() == 0 || txtMessage.getText().toString().length() == 0 || txtImeFirme.getText().toString().length() == 0 || txtAdresa.getText().toString().length() == 0|| txtKontakt.getText().toString().length() == 0) {
 
-            Toast.makeText(getApplicationContext(), "Popunite sva neophodna polja i izaberite nacin isporuke", Toast.LENGTH_SHORT).show();
-
+            displaySnackbar();
         }
         else{
             RadioButton selectedRadioButton = (RadioButton) findViewById(selectedRadioButtonID);
@@ -73,7 +76,7 @@ public class EmailActivity extends AppCompatActivity {
             txtMessage.setError( "Poruka mejla je obavezna!" );
         }
         else if( selectedRadioButtonID <=0 ) {
-            Toast.makeText(getApplicationContext(), "Odaberite nacin isporuke",Toast.LENGTH_SHORT).show();
+            displaySnackbar();
         }
 
         else {
@@ -107,6 +110,11 @@ public class EmailActivity extends AppCompatActivity {
                 view.getContext().startActivity(intent);}
         });
         Toast.makeText(getApplicationContext(), "Kliknite 2 puta za povratak u meni",Toast.LENGTH_SHORT).show();
+    }
+
+    public void displaySnackbar(){
+        Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "Popunite sva neophodna polja i izaberite način isporuke", Snackbar.LENGTH_LONG);
+        snackbar.show();
     }
 }
 

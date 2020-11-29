@@ -1,10 +1,16 @@
 package com.aplikacija.Mabeg;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -42,9 +48,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void websajt(View view) {
-        Intent Getintent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.mabeg.rs/"));
-        Toast.makeText(getApplicationContext(), "Ukljucite internet kako bi imali pristup vebsajtu", Toast.LENGTH_SHORT).show();
-        startActivity(Getintent);
+        if(isConnected()){
+            Intent Getintent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.mabeg.rs/"));
+            startActivity(Getintent);
+
+        }else {
+            AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+            alertDialog.setTitle("Konektujte se na internet");
+            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+            alertDialog.show();
+        }
     }
 
     public void oNama(View view) {
@@ -58,8 +76,35 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void mapa(View view) {
-        Intent intent = new Intent(view.getContext(), MapsActivity.class);
-        view.getContext().startActivity(intent);
+        if(isConnected()){
+            Intent intent = new Intent(view.getContext(), MapsActivity.class);
+            view.getContext().startActivity(intent);
+
+        }else {
+            AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+            alertDialog.setTitle("Konektujte se na internet");
+            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+            alertDialog.show();
+        }
+    }
+
+
+    public boolean isConnected() {
+        boolean connected = false;
+        try {
+            ConnectivityManager cm = (ConnectivityManager)getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo nInfo = cm.getActiveNetworkInfo();
+            connected = nInfo != null && nInfo.isAvailable() && nInfo.isConnected();
+            return connected;
+        } catch (Exception e) {
+            Log.e("Connectivity Exception", e.getMessage());
+        }
+        return connected;
     }
 
     private void setSliderViews() {
