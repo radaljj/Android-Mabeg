@@ -35,4 +35,23 @@
         android:background="@drawable/rounded_corners"
         android:text="Pozovite nas!"
         android:textColor="#FFF" />
+
+    <EditText
+        android:layout_marginTop="30dp"
+        android:id="@+id/et_phone_no1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:editable="false"
+        android:text="0113541628"
+        android:textColorHint="#ba160c" />
+
+    <Button
+        android:id="@+id/btn_dial1"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/rounded_corners"
+        android:text="Pozovite nas!"
+        android:textColor="#FFF" />
 </LinearLayout>

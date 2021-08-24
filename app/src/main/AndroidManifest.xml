@@ -22,7 +22,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Hp30"></activity>
+        <activity android:name=".IstorijaPorudzbina"></activity>
+        <activity
+            android:name=".Kalkulator"
+            android:screenOrientation="portrait"
+            android:theme="@style/KalkulatorTheme"
+            tools:ignore="LockedOrientationActivity" />
+        <activity android:name=".Hp30" />
         <activity android:name=".Najlon" />
         <activity android:name=".SpecijalneEtikete" />
         <activity android:name=".Saten" />

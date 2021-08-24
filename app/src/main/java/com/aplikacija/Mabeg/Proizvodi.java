@@ -1,5 +1,6 @@
-package com.aplikacija.Mabeg;
+    package com.aplikacija.Mabeg;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +13,9 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -40,6 +44,23 @@ public class Proizvodi extends AppCompatActivity {
         sliderLayout.setScrollTimeInSec(500000); //set scroll delay in seconds :
 
         setSliderViews();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.email_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.istorija:
+                startActivity(new Intent(Proizvodi.this, IstorijaPorudzbina.class));
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void setSliderViews() {
@@ -92,7 +113,7 @@ public class Proizvodi extends AppCompatActivity {
                     break;
                 case 10:
                     sliderView.setDescription("Etikete na A4 papiru");
-                    sliderView.setImageDrawable(R.drawable.a4);
+                    sliderView.setImageDrawable(R.drawable.a4_etikete);
                     break;
                 case 11:
                     sliderView.setDescription("Ušivna etiketa");
@@ -130,15 +151,18 @@ public class Proizvodi extends AppCompatActivity {
                                startActivity(myIntent);
 
                            }else {
-                               AlertDialog alertDialog = new AlertDialog.Builder(Proizvodi.this).create();
-                               alertDialog.setTitle("Konektujte se na internet");
-                               alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                                       new DialogInterface.OnClickListener() {
-                                           public void onClick(DialogInterface dialog, int which) {
-                                               dialog.dismiss();
-                                           }
-                                       });
-                               alertDialog.show();
+                               AlertDialog.Builder builder = new AlertDialog.Builder(Proizvodi.this,R.style.DialogeTheme);
+                               String mystring="Konektujte se na internet";
+                               builder.setTitle("Greška");
+                               builder.setMessage(mystring);
+                               builder.setNegativeButton("U redu", new DialogInterface.OnClickListener() {
+                                   @Override
+                                   public void onClick(DialogInterface dialog, int which) {
+
+                                   }
+                               });
+
+                               builder.create().show();
                            }
                            break;
                        case 1:
@@ -147,15 +171,18 @@ public class Proizvodi extends AppCompatActivity {
                                startActivity(myIntent);
 
                            }else {
-                               AlertDialog alertDialog = new AlertDialog.Builder(Proizvodi.this).create();
-                               alertDialog.setTitle("Konektujte se na internet");
-                               alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                                       new DialogInterface.OnClickListener() {
-                                           public void onClick(DialogInterface dialog, int which) {
-                                               dialog.dismiss();
-                                           }
-                                       });
-                               alertDialog.show();
+                               AlertDialog.Builder builder = new AlertDialog.Builder(Proizvodi.this,R.style.DialogeTheme);
+                               String mystring="Konektujte se na internet";
+                               builder.setTitle("Greška");
+                               builder.setMessage(mystring);
+                               builder.setNegativeButton("U redu", new DialogInterface.OnClickListener() {
+                                   @Override
+                                   public void onClick(DialogInterface dialog, int which) {
+
+                                   }
+                               });
+
+                               builder.create().show();
                            }
                            break;
                        case 2:
@@ -164,15 +191,18 @@ public class Proizvodi extends AppCompatActivity {
                                startActivity(myIntent);
 
                            }else {
-                               AlertDialog alertDialog = new AlertDialog.Builder(Proizvodi.this).create();
-                               alertDialog.setTitle("Konektujte se na internet");
-                               alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                                       new DialogInterface.OnClickListener() {
-                                           public void onClick(DialogInterface dialog, int which) {
-                                               dialog.dismiss();
-                                           }
-                                       });
-                               alertDialog.show();
+                               AlertDialog.Builder builder = new AlertDialog.Builder(Proizvodi.this,R.style.DialogeTheme);
+                               String mystring="Konektujte se na internet";
+                               builder.setTitle("Greška");
+                               builder.setMessage(mystring);
+                               builder.setNegativeButton("U redu", new DialogInterface.OnClickListener() {
+                                   @Override
+                                   public void onClick(DialogInterface dialog, int which) {
+
+                                   }
+                               });
+
+                               builder.create().show();
                            }
                            break;
 
@@ -182,15 +212,18 @@ public class Proizvodi extends AppCompatActivity {
                            startActivity(myIntent);
 
                        }else {
-                           AlertDialog alertDialog = new AlertDialog.Builder(Proizvodi.this).create();
-                               alertDialog.setTitle("Konektujte se na internet");
-                           alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                                   new DialogInterface.OnClickListener() {
-                                       public void onClick(DialogInterface dialog, int which) {
-                                           dialog.dismiss();
-                                       }
-                                   });
-                           alertDialog.show();
+                               AlertDialog.Builder builder = new AlertDialog.Builder(Proizvodi.this,R.style.DialogeTheme);
+                               String mystring="Konektujte se na internet";
+                               builder.setTitle("Greška");
+                               builder.setMessage(mystring);
+                               builder.setNegativeButton("U redu", new DialogInterface.OnClickListener() {
+                                   @Override
+                                   public void onClick(DialogInterface dialog, int which) {
+
+                                   }
+                               });
+
+                               builder.create().show();
                        }
                            break;
                        case 4:
@@ -199,15 +232,18 @@ public class Proizvodi extends AppCompatActivity {
                                startActivity(myIntent);
 
                            }else {
-                               AlertDialog alertDialog = new AlertDialog.Builder(Proizvodi.this).create();
-                               alertDialog.setTitle("Konektujte se na internet");
-                               alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                                       new DialogInterface.OnClickListener() {
-                                           public void onClick(DialogInterface dialog, int which) {
-                                               dialog.dismiss();
-                                           }
-                                       });
-                               alertDialog.show();
+                               AlertDialog.Builder builder = new AlertDialog.Builder(Proizvodi.this,R.style.DialogeTheme);
+                               String mystring="Konektujte se na internet";
+                               builder.setTitle("Greška");
+                               builder.setMessage(mystring);
+                               builder.setNegativeButton("U redu", new DialogInterface.OnClickListener() {
+                                   @Override
+                                   public void onClick(DialogInterface dialog, int which) {
+
+                                   }
+                               });
+
+                               builder.create().show();
                            }
                            break;
 
@@ -217,15 +253,18 @@ public class Proizvodi extends AppCompatActivity {
                                startActivity(myIntent);
 
                            }else {
-                               AlertDialog alertDialog = new AlertDialog.Builder(Proizvodi.this).create();
-                               alertDialog.setTitle("Konektujte se na internet");
-                               alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                                       new DialogInterface.OnClickListener() {
-                                           public void onClick(DialogInterface dialog, int which) {
-                                               dialog.dismiss();
-                                           }
-                                       });
-                               alertDialog.show();
+                               AlertDialog.Builder builder = new AlertDialog.Builder(Proizvodi.this,R.style.DialogeTheme);
+                               String mystring="Konektujte se na internet";
+                               builder.setTitle("Greška");
+                               builder.setMessage(mystring);
+                               builder.setNegativeButton("U redu", new DialogInterface.OnClickListener() {
+                                   @Override
+                                   public void onClick(DialogInterface dialog, int which) {
+
+                                   }
+                               });
+
+                               builder.create().show();
                            }
                            break;
                        case 6:
@@ -234,15 +273,18 @@ public class Proizvodi extends AppCompatActivity {
                                startActivity(myIntent);
 
                            }else {
-                               AlertDialog alertDialog = new AlertDialog.Builder(Proizvodi.this).create();
-                               alertDialog.setTitle("Konektujte se na internet");
-                               alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                                       new DialogInterface.OnClickListener() {
-                                           public void onClick(DialogInterface dialog, int which) {
-                                               dialog.dismiss();
-                                           }
-                                       });
-                               alertDialog.show();
+                               AlertDialog.Builder builder = new AlertDialog.Builder(Proizvodi.this,R.style.DialogeTheme);
+                               String mystring="Konektujte se na internet";
+                               builder.setTitle("Greška");
+                               builder.setMessage(mystring);
+                               builder.setNegativeButton("U redu", new DialogInterface.OnClickListener() {
+                                   @Override
+                                   public void onClick(DialogInterface dialog, int which) {
+
+                                   }
+                               });
+
+                               builder.create().show();
                            }
                            break;
                        case 7:
@@ -251,15 +293,18 @@ public class Proizvodi extends AppCompatActivity {
                                startActivity(myIntent);
 
                            }else {
-                               AlertDialog alertDialog = new AlertDialog.Builder(Proizvodi.this).create();
-                               alertDialog.setTitle("Konektujte se na internet");
-                               alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                                       new DialogInterface.OnClickListener() {
-                                           public void onClick(DialogInterface dialog, int which) {
-                                               dialog.dismiss();
-                                           }
-                                       });
-                               alertDialog.show();
+                               AlertDialog.Builder builder = new AlertDialog.Builder(Proizvodi.this,R.style.DialogeTheme);
+                               String mystring="Konektujte se na internet";
+                               builder.setTitle("Greška");
+                               builder.setMessage(mystring);
+                               builder.setNegativeButton("U redu", new DialogInterface.OnClickListener() {
+                                   @Override
+                                   public void onClick(DialogInterface dialog, int which) {
+
+                                   }
+                               });
+
+                               builder.create().show();
                            }
                            break;
                        case 8:
@@ -268,15 +313,18 @@ public class Proizvodi extends AppCompatActivity {
                                startActivity(myIntent);
 
                            }else {
-                               AlertDialog alertDialog = new AlertDialog.Builder(Proizvodi.this).create();
-                               alertDialog.setTitle("Konektujte se na internet");
-                               alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                                       new DialogInterface.OnClickListener() {
-                                           public void onClick(DialogInterface dialog, int which) {
-                                               dialog.dismiss();
-                                           }
-                                       });
-                               alertDialog.show();
+                               AlertDialog.Builder builder = new AlertDialog.Builder(Proizvodi.this,R.style.DialogeTheme);
+                               String mystring="Konektujte se na internet";
+                               builder.setTitle("Greška");
+                               builder.setMessage(mystring);
+                               builder.setNegativeButton("U redu", new DialogInterface.OnClickListener() {
+                                   @Override
+                                   public void onClick(DialogInterface dialog, int which) {
+
+                                   }
+                               });
+
+                               builder.create().show();
                            }
                            break;
                        case 9:
@@ -285,15 +333,18 @@ public class Proizvodi extends AppCompatActivity {
                                startActivity(myIntent);
 
                            }else {
-                               AlertDialog alertDialog = new AlertDialog.Builder(Proizvodi.this).create();
-                               alertDialog.setTitle("Konektujte se na internet");
-                               alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                                       new DialogInterface.OnClickListener() {
-                                           public void onClick(DialogInterface dialog, int which) {
-                                               dialog.dismiss();
-                                           }
-                                       });
-                               alertDialog.show();
+                               AlertDialog.Builder builder = new AlertDialog.Builder(Proizvodi.this,R.style.DialogeTheme);
+                               String mystring="Konektujte se na internet";
+                               builder.setTitle("Greška");
+                               builder.setMessage(mystring);
+                               builder.setNegativeButton("U redu", new DialogInterface.OnClickListener() {
+                                   @Override
+                                   public void onClick(DialogInterface dialog, int which) {
+
+                                   }
+                               });
+
+                               builder.create().show();
                            }
                            break;
                        case 10:
@@ -302,15 +353,18 @@ public class Proizvodi extends AppCompatActivity {
                                startActivity(myIntent);
 
                            }else {
-                               AlertDialog alertDialog = new AlertDialog.Builder(Proizvodi.this).create();
-                               alertDialog.setTitle("Konektujte se na internet");
-                               alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                                       new DialogInterface.OnClickListener() {
-                                           public void onClick(DialogInterface dialog, int which) {
-                                               dialog.dismiss();
-                                           }
-                                       });
-                               alertDialog.show();
+                               AlertDialog.Builder builder = new AlertDialog.Builder(Proizvodi.this,R.style.DialogeTheme);
+                               String mystring="Konektujte se na internet";
+                               builder.setTitle("Greška");
+                               builder.setMessage(mystring);
+                               builder.setNegativeButton("U redu", new DialogInterface.OnClickListener() {
+                                   @Override
+                                   public void onClick(DialogInterface dialog, int which) {
+
+                                   }
+                               });
+
+                               builder.create().show();
                            }
                            break;
                        case 11:
@@ -319,15 +373,18 @@ public class Proizvodi extends AppCompatActivity {
                                startActivity(myIntent);
 
                            }else {
-                               AlertDialog alertDialog = new AlertDialog.Builder(Proizvodi.this).create();
-                               alertDialog.setTitle("Konektujte se na internet");
-                               alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                                       new DialogInterface.OnClickListener() {
-                                           public void onClick(DialogInterface dialog, int which) {
-                                               dialog.dismiss();
-                                           }
-                                       });
-                               alertDialog.show();
+                               AlertDialog.Builder builder = new AlertDialog.Builder(Proizvodi.this,R.style.DialogeTheme);
+                               String mystring="Konektujte se na internet";
+                               builder.setTitle("Greška");
+                               builder.setMessage(mystring);
+                               builder.setNegativeButton("U redu", new DialogInterface.OnClickListener() {
+                                   @Override
+                                   public void onClick(DialogInterface dialog, int which) {
+
+                                   }
+                               });
+
+                               builder.create().show();
                            }
                            break;
                        case 12:
@@ -336,15 +393,18 @@ public class Proizvodi extends AppCompatActivity {
                                startActivity(myIntent);
 
                            }else {
-                               AlertDialog alertDialog = new AlertDialog.Builder(Proizvodi.this).create();
-                               alertDialog.setTitle("Konektujte se na internet");
-                               alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                                       new DialogInterface.OnClickListener() {
-                                           public void onClick(DialogInterface dialog, int which) {
-                                               dialog.dismiss();
-                                           }
-                                       });
-                               alertDialog.show();
+                               AlertDialog.Builder builder = new AlertDialog.Builder(Proizvodi.this,R.style.DialogeTheme);
+                               String mystring="Konektujte se na internet";
+                               builder.setTitle("Greška");
+                               builder.setMessage(mystring);
+                               builder.setNegativeButton("U redu", new DialogInterface.OnClickListener() {
+                                   @Override
+                                   public void onClick(DialogInterface dialog, int which) {
+
+                                   }
+                               });
+
+                               builder.create().show();
                            }
                            break;
                        case 13:
@@ -353,15 +413,18 @@ public class Proizvodi extends AppCompatActivity {
                                startActivity(myIntent);
 
                            }else {
-                               AlertDialog alertDialog = new AlertDialog.Builder(Proizvodi.this).create();
-                               alertDialog.setTitle("Konektujte se na internet");
-                               alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                                       new DialogInterface.OnClickListener() {
-                                           public void onClick(DialogInterface dialog, int which) {
-                                               dialog.dismiss();
-                                           }
-                                       });
-                               alertDialog.show();
+                               AlertDialog.Builder builder = new AlertDialog.Builder(Proizvodi.this,R.style.DialogeTheme);
+                               String mystring="Konektujte se na internet";
+                               builder.setTitle("Greška");
+                               builder.setMessage(mystring);
+                               builder.setNegativeButton("U redu", new DialogInterface.OnClickListener() {
+                                   @Override
+                                   public void onClick(DialogInterface dialog, int which) {
+
+                                   }
+                               });
+
+                               builder.create().show();
                            }
                            break;
                        case 14:
@@ -370,15 +433,18 @@ public class Proizvodi extends AppCompatActivity {
                                startActivity(myIntent);
 
                            }else {
-                               AlertDialog alertDialog = new AlertDialog.Builder(Proizvodi.this).create();
-                               alertDialog.setTitle("Konektujte se na internet");
-                               alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                                       new DialogInterface.OnClickListener() {
-                                           public void onClick(DialogInterface dialog, int which) {
-                                               dialog.dismiss();
-                                           }
-                                       });
-                               alertDialog.show();
+                               AlertDialog.Builder builder = new AlertDialog.Builder(Proizvodi.this,R.style.DialogeTheme);
+                               String mystring="Konektujte se na internet";
+                               builder.setTitle("Greška");
+                               builder.setMessage(mystring);
+                               builder.setNegativeButton("U redu", new DialogInterface.OnClickListener() {
+                                   @Override
+                                   public void onClick(DialogInterface dialog, int which) {
+
+                                   }
+                               });
+
+                               builder.create().show();
                            }
                            break;
 

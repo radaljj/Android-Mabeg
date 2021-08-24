@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Kalkulator"
+    android:background="@drawable/pozadina">
+
+    <TextView
+        android:id="@+id/article_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="Kalkulator"
+        android:textAppearance=
+            "@android:style/TextAppearance.DeviceDefault.Large"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/article_heading"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtSirina"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                style="@style/KalkulatorStyle"
+                android:textColorHint="#000000"
+                app:hintTextAppearance="@style/TextLabel"
+                app:hintEnabled="false"
+                android:hint="Širina etikete(MM)"
+
+                android:theme="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:id="@+id/edtSirina"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textColor="#000000"
+                    android:hint="Širina etikete(mm)"
+                    android:layout_margin="20dp"
+                    android:textColorHint="#000000"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtVisina"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                style="@style/KalkulatorStyle"
+                android:textColorHint="#000000"
+                app:hintTextAppearance="@style/TextLabel"
+                android:hint="Unesite visinu etikete u milimetrima"
+                app:hintEnabled="false"
+                android:theme="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:id="@+id/edtVisina"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:hint="Visina etikete(mm)"
+                    android:textColor="#000000"
+                    android:layout_margin="20dp"
+                    android:textColorHint="#000000"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtBrKomadaNaKolutu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                style="@style/KalkulatorStyle"
+                android:textColorHint="#000000"
+                app:hintTextAppearance="@style/TextLabel"
+                android:hint="Unesite broj komada etiketa na kolutu"
+                app:hintEnabled="false"
+                android:theme="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:id="@+id/edtBrKomadaNaKolutu"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textColor="#000000"
+                    android:layout_margin="20dp"
+                    android:hint="Broj komada etiketa na kolutu"
+                    android:textColorHint="#000000"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtBrKolutova"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                style="@style/KalkulatorStyle"
+                android:textColorHint="#000000"
+                app:hintTextAppearance="@style/TextLabel"
+                android:hint="Unesite broj kolutova"
+                app:hintEnabled="false"
+                android:theme="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:id="@+id/brKolutova"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:hint="Broj kolutova "
+                    android:textColor="#000000"
+                    android:layout_margin="20dp"
+                    android:textColorHint="#000000"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_marginLeft="15sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_result"
+                android:text="Izaberite broj etiketa u jednom redu"
+                android:textColor="#000000">
+
+            </TextView>
+            <RadioGroup
+                android:textSize="17sp"
+                android:id="@+id/rg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <RadioButton
+                    android:id="@+id/jednoredne"
+                    android:textSize="17sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="15dp"
+                    android:text="Jednoredne"
+                    android:textColor="#000000" />
+
+                <RadioButton
+                    android:id="@+id/rb_dvoredne"
+                    android:textSize="17sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="15dp"
+                    android:text="Dvoredne"
+                    android:textColor="#000000" />
+
+
+                <RadioButton
+                    android:id="@+id/troredne"
+                    android:textSize="17sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="15dp"
+                    android:text="Troredne"
+                    android:textColor="#000000" />
+                <RadioButton
+                    android:id="@+id/rb_cetvoredne"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="15dp"
+                    android:textSize="17sp"
+                    android:text="Četvoredne"
+                    android:textColor="#000000" />
+
+
+            </RadioGroup>
+
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_marginLeft="15sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_result"
+                android:text="Izaberite dužinu ribona"
+                android:textColor="#000000">
+
+            </TextView>
+            <Spinner
+                style="@style/Widget.AppCompat.Spinner.DropDown"
+                android:layout_marginTop="14sp"
+                android:layout_marginBottom="45sp"
+                android:id="@+id/spinner1"
+                android:layout_width="175dp"
+                android:background="@drawable/spinnerstyle"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="29sp"
+                android:layout_marginLeft="15sp"
+                android:orientation="horizontal"
+
+
+                />
+
+            <Button
+                android:layout_gravity="center"
+                android:id="@+id/izracunajDugme"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:textColor="#FFF"
+                android:background="@drawable/rounded_corners"
+                android:onClick="dugmeIzracunaj"
+                android:text="Izračunaj količinu"
+                android:textSize="14dp"/>
+
+            <Button
+                android:layout_gravity="center"
+                android:id="@+id/nazadDugme"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="#FFF"
+                android:onClick="meni"
+                android:background="@drawable/rounded_corners"
+                android:text="Povratak u meni"
+                android:textSize="14dp"/>
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

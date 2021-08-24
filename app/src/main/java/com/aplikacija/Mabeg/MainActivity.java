@@ -1,16 +1,21 @@
 package com.aplikacija.Mabeg;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -28,12 +33,48 @@ public class MainActivity extends AppCompatActivity {
        sliderLayout.setScrollTimeInSec(2); //set scroll delay in seconds :
 
        setSliderViews();
-        getSupportActionBar().hide();
+
+        if (isFirstTime()) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this, R.style.DialogeTheme);
+            String mystring = getResources().getString(R.string.noviMeni);
+            builder.setTitle("Navigacioni meni aplikacije");
+            builder.setMessage(mystring);
+            builder.setNegativeButton("U redu", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                }
+            });
+
+            builder.create().show();
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.email_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.istorija:
+                startActivity(new Intent(MainActivity.this, IstorijaPorudzbina.class));
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 
     public void proizvodi(View view) {
         Intent intent = new Intent(view.getContext(), Proizvodi.class);
+        view.getContext().startActivity(intent);
+    }
+
+    public void kalkulator(View view) {
+        Intent intent = new Intent(view.getContext(), Kalkulator.class);
         view.getContext().startActivity(intent);
     }
 
@@ -53,15 +94,18 @@ public class MainActivity extends AppCompatActivity {
             startActivity(Getintent);
 
         }else {
-            AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
-            alertDialog.setTitle("Konektujte se na internet");
-            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                        }
-                    });
-            alertDialog.show();
+            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this,R.style.DialogeTheme);
+            String mystring="Konektujte se na internet";
+            builder.setTitle("Greška");
+            builder.setMessage(mystring);
+            builder.setNegativeButton("U redu", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                }
+            });
+
+            builder.create().show();
         }
     }
 
@@ -71,8 +115,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void pomoc(View view) {
-        Intent intent = new Intent(view.getContext(), Pomoc.class);
-        view.getContext().startActivity(intent);
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this,R.style.DialogeTheme);
+        String mystring = getResources().getString(R.string.article_text);
+        builder.setTitle("Pomoć u korišćenju apliakcije");
+        builder.setMessage(mystring);
+        builder.setNegativeButton("U redu", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+
+        builder.create().show();
     }
 
     public void mapa(View view) {
@@ -81,15 +135,18 @@ public class MainActivity extends AppCompatActivity {
             view.getContext().startActivity(intent);
 
         }else {
-            AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
-            alertDialog.setTitle("Konektujte se na internet");
-            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                        }
-                    });
-            alertDialog.show();
+            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this,R.style.DialogeTheme);
+            String mystring="Konektujte se na internet";
+            builder.setTitle("Greška");
+            builder.setMessage(mystring);
+            builder.setNegativeButton("U redu", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                }
+            });
+
+            builder.create().show();
         }
     }
 
@@ -106,6 +163,22 @@ public class MainActivity extends AppCompatActivity {
         }
         return connected;
     }
+
+
+    private boolean isFirstTime() {
+        SharedPreferences preferences = getPreferences(MODE_PRIVATE);
+        boolean ranBefore = preferences.getBoolean("MainNewActivity", false);
+        if (!ranBefore) {
+            // first time
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putBoolean("MainNewActivity", true);
+            editor.commit();
+        }
+        return !ranBefore;
+    }
+
+
+
 
     private void setSliderViews() {
 

@@ -29,6 +29,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/rounded_corners"
         android:text="Povratak u meni"
+        android:textSize="14dp"
         android:textColor="#FFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

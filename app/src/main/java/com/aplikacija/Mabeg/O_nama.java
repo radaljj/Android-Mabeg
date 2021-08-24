@@ -25,7 +25,7 @@ public class O_nama extends AppCompatActivity {
                        // .addItem(new Element().setTitle("Verzija 1.1"))
                         .setDescription(mystring)
                        // .addItem(adsElement)
-                        .addGroup("Umrezite se sa nama!")
+                        .addGroup("Umrežite se sa nama!")
                         .addEmail("office@mabeg.rs","Kontaktirajte nas putem mejla")
                         .addWebsite("http://www.mabeg.rs/","Posetite naš vebsajt")
                         .addYoutube("UC6-vI1kHD8Imm5ND_QvLsIQ","Posetite naš youtube kanal")

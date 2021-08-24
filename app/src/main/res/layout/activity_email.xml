@@ -21,7 +21,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/article_heading"
-        android:layout_marginTop="3dp">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="2dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -33,209 +36,211 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Email za slanje:"
-                android:textSize="17sp"
                 android:textColor="#000000"
-                android:textColorHint="#ba160c" />
+                android:textColorHint="#ba160c"
+                android:textSize="17sp" />
 
             <EditText
 
                 android:id="@+id/sendTo"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:textSize="17sp"
                 android:editable="false"
                 android:text="office@mabeg.rs"
                 android:textColor="#000000"
-                android:textColorHint="#ba160c" />
+                android:textColorHint="#ba160c"
+                android:textSize="17sp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
                 android:text="Tema poruke: "
-                android:textSize="17sp"
                 android:textColor="#000000"
-                android:textColorHint="#ba160c" />
+                android:textColorHint="#ba160c"
+                android:textSize="17sp"
+                android:visibility="gone" />
 
             <EditText
                 android:id="@+id/subjectTo"
-                android:visibility="gone"
-                android:textSize="17sp"
-                android:editable="false"
-                android:text="porudžbina putem aplikacije"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:editable="false"
+                android:text="porudžbina putem aplikacije"
                 android:textColor="#000000"
-                android:textColorHint="#ba160c" />
+                android:textColorHint="#ba160c"
+                android:textSize="17sp"
+                android:visibility="gone" />
 
 
             <TextView
                 android:layout_width="match_parent"
-                android:textSize="17sp"
                 android:layout_height="wrap_content"
                 android:text="Ime firme(*): "
                 android:textColor="#000000"
-                android:textColorHint="#ba160c" />
+                android:textColorHint="#ba160c"
+                android:textSize="17sp" />
 
             <EditText
                 android:id="@+id/imeFirme"
-                android:textSize="17sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#000000"
                 android:textColorHint="#ba160c"
-                />
+                android:textSize="17sp" />
 
             <TextView
                 android:layout_width="match_parent"
-                android:textSize="17sp"
                 android:layout_height="wrap_content"
                 android:text="Adresa firme(*): "
                 android:textColor="#000000"
-                android:textColorHint="#ba160c" />
+                android:textColorHint="#ba160c"
+                android:textSize="17sp" />
 
             <EditText
                 android:id="@+id/adresaFirme"
 
                 android:layout_width="match_parent"
-                android:textSize="17sp"
                 android:layout_height="wrap_content"
                 android:textColor="#000000"
-                android:textColorHint="#ba160c" />
+                android:textColorHint="#ba160c"
+                android:textSize="17sp" />
 
 
             <TextView
                 android:layout_width="match_parent"
-                android:textSize="17sp"
                 android:layout_height="wrap_content"
                 android:text="Kontakt/telefon(*): "
                 android:textColor="#000000"
-                android:textColorHint="#ba160c" />
+                android:textColorHint="#ba160c"
+                android:textSize="17sp" />
 
             <EditText
                 android:id="@+id/kontaktTelefon"
-                android:textSize="17sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#000000"
-                android:textColorHint="#ba160c" />
+                android:textColorHint="#ba160c"
+                android:textSize="17sp" />
 
             <TextView
                 android:layout_width="match_parent"
-                android:textSize="17sp"
                 android:layout_height="wrap_content"
                 android:text="Poruka(*): "
                 android:textColor="#000000"
-                android:textColorHint="#ba160c" />
+                android:textColorHint="#ba160c"
+                android:textSize="17sp" />
 
             <EditText
                 android:id="@+id/messageTo"
-                android:textSize="17sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#000000"
-                android:textColorHint="#ba160c" />
+                android:textColorHint="#ba160c"
+                android:textSize="17sp" />
 
 
             <TextView
                 android:id="@+id/tv"
-                android:textSize="17sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_result"
                 android:text="Izaberite način isporuke(*)"
-                android:textColor="#000000">
+                android:textColor="#000000"
+                android:textSize="17sp">
 
             </TextView>
+
             <RadioGroup
-                android:textSize="17sp"
                 android:id="@+id/rg"
                 android:layout_width="wrap_content"
-
                 android:layout_height="wrap_content"
+
                 android:layout_below="@id/tv"
                 android:orientation="vertical"
-                android:padding="15dp">
+                android:padding="15dp"
+                android:textSize="17sp">
 
                 <RadioButton
                     android:id="@+id/rb_daily_express"
                     android:layout_width="match_parent"
-                    android:textSize="17sp"
                     android:layout_height="wrap_content"
-
                     android:paddingRight="15dp"
+
                     android:text="Daily express kurirska služba"
-                    android:textColor="@android:color/black" />
+                    android:textColor="@android:color/black"
+                    android:textSize="17sp" />
 
                 <RadioButton
                     android:id="@+id/rb_aks"
-                    android:textSize="17sp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingRight="15dp"
                     android:text="Aks kurirska služba"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:textSize="17sp" />
 
                 <RadioButton
                     android:id="@+id/rb_city_express"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingRight="15dp"
-                    android:textSize="17sp"
                     android:text="City express kurirska služba"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:textSize="17sp" />
 
                 <RadioButton
                     android:id="@+id/rb_beks"
-                    android:textSize="17sp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingRight="15dp"
                     android:text="Bex kurirska služba"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:textSize="17sp" />
 
                 <RadioButton
                     android:id="@+id/rb_post_express"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingRight="15dp"
-                    android:textSize="17sp"
                     android:text="Post express kurirska služba"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:textSize="17sp" />
 
                 <RadioButton
                     android:id="@+id/rb_preuzimanje"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingRight="15dp"
-                    android:textSize="17sp"
                     android:text="Lično preuzimanje"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:textSize="17sp" />
 
 
             </RadioGroup>
 
             <Button
-                android:layout_gravity="center"
                 android:id="@+id/btnSendEmail"
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
-                android:textColor="#FFF"
+                android:layout_gravity="center"
                 android:background="@drawable/rounded_corners"
                 android:onClick="onClick"
-                android:text="Pošalji E-mail" />
+                android:text="Pošalji E-mail"
+                android:textColor="#FFF"
+                android:textSize="14dp" />
 
             <Button
-            android:layout_gravity="center"
                 android:id="@+id/nazadDugme"
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
-                android:onClick="nazad"
+                android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:textColor="#FFF"
                 android:background="@drawable/rounded_corners"
-                android:text="Povratak u meni" />
+                android:onClick="nazad"
+                android:text="Povratak u meni"
+                android:textColor="#FFF"
+                android:textSize="14dp" />
         </LinearLayout>
 
     </ScrollView>
